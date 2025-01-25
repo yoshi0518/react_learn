@@ -30,8 +30,8 @@
     "formatter": {
       "quoteStyle": "single",
       "jsxQuoteStyle": "single",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "asNeeded"
+      "semicolons": "always",
+      "arrowParentheses": "always"
     }
   },
   "json": {

@@ -1,1 +1,8 @@
-# React + TypeScript + Vite Template
+# React + TypeScript + Vite
+
+- React
+- React Router
+- Tailwind CSS
+- TypeScript
+- Vite
+- Biome
