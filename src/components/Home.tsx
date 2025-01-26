@@ -4,7 +4,7 @@ const Home = () => (
   <>
     <h2 className='text-xl my-4'>Home</h2>
 
-    <h3 className='text-semibold'>1. UIの記述</h3>
+    <h3 className='text-semibold mt-4'>1. UIの記述</h3>
     <Link to='/section1_1' className='text-blue-700 underline ml-4 block'>
       1. 初めてのコンポーネント
     </Link>
@@ -23,6 +23,22 @@ const Home = () => (
     <Link to='/section1_6' className='text-blue-700 underline ml-4 block'>
       6. リストのレンダー
     </Link>
+
+    <h3 className='text-semibold mt-4'>2. インタラクティビティの追加</h3>
+    <Link to='/section2_1' className='text-blue-700 underline ml-4 block'>
+      1. イベントハンドラでのpropsの読み取り
+    </Link>
+    <Link to='/section2_2' className='text-blue-700 underline ml-4 block'>
+      2. state：コンポーネントのメモリ
+    </Link>
+    <Link to='/section2_3' className='text-blue-700 underline ml-4 block'>
+      3. state内のオブジェクトの更新
+    </Link>
+    <Link to='/section2_4' className='text-blue-700 underline ml-4 block'>
+      4. state内の配列の更新
+    </Link>
+
+    <h3 className='text-semibold mt-4'>3. stateの管理</h3>
   </>
 );
 
