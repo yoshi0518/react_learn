@@ -39,6 +39,9 @@ const Home = () => (
     </Link>
 
     <h3 className='text-semibold mt-4'>3. stateの管理</h3>
+    <Link to='/section3_1' className='text-blue-700 underline ml-4 block'>
+      1. stateの管理
+    </Link>
   </>
 );
 

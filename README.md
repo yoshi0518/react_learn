@@ -1,4 +1,6 @@
-# React + TypeScript + Vite
+# React Learn
+
+https://ja.react.dev/learn
 
 - React
 - React Router
