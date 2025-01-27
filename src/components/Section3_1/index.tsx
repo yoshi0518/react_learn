@@ -1,3 +1,4 @@
+import Accordion from './Accordion';
 import Form from './Form';
 
 const Section3_1 = () => {
@@ -11,6 +12,7 @@ const Section3_1 = () => {
       </div>
 
       <h3>コンポーネント間でstateを共有する</h3>
+      <Accordion />
     </>
   );
 };

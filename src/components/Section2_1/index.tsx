@@ -1,8 +1,8 @@
 import Button1 from './Button1';
 import Button2 from './Button2';
+import Form from './Form';
 import Toolbar1 from './Toolbar1';
 import Toolbar2 from './Toolbar2';
-import Form from './Form';
 
 const Section2_1 = () => {
   const handleAlert = () => alert('Playing2');
