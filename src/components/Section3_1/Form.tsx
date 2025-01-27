@@ -1,45 +1,65 @@
 import { useState } from 'react';
 
+const submitForm = async (answer: string) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const shouldError = answer.toLowerCase() !== 'lima';
+      if (shouldError) {
+        reject(new Error('Good guess but a wrong answer. Try again!'));
+      } else {
+        resolve(answer);
+      }
+    }, 1500);
+  });
+};
+
 const Form = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [error, setError] = useState('');
+  const [status, setStatus] = useState('typing');
 
-  const fullName = `${firstName} ${lastName}`;
+  if (status === 'success') {
+    return <h1>That's right!</h1>;
+  }
 
-  const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFirstName(e.target.value);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    try {
+      await submitForm(answer);
+      setStatus('success');
+    } catch (err: unknown) {
+      setStatus('typing');
+      setError(err instanceof Error ? err.message : String(err));
+    }
   };
 
-  const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLastName(e.target.value);
+  const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setAnswer(e.target.value);
   };
 
   return (
     <>
-      <div>Let's check you in</div>
-      <label className='block'>
-        First Name：
-        <input
-          type='text'
-          placeholder='Name'
-          className='border border-gray-300 rounded p-1 mb-1'
-          value={firstName}
-          onChange={handleFirstNameChange}
+      <h2>City quiz</h2>
+      <p>In which city is there a billboard that turns air into drinkable water?</p>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          value={answer}
+          onChange={handleTextareaChange}
+          disabled={status === 'submitting'}
+          className='border border-gray-300 rounded p-1 mb-1 w-[400px]'
         />
-      </label>
-      <label className='block'>
-        Last Name：
-        <input
-          type='text'
-          placeholder='Email'
-          className='border border-gray-300 rounded p-1 mb-1'
-          value={lastName}
-          onChange={handleLastNameChange}
-        />
-      </label>
-      <p>
-        Your ticket will be issued to: <b>{fullName}</b>
-      </p>
+        <br />
+        <button
+          type='button'
+          disabled={answer.length === 0 || status === 'submitting'}
+          className='rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+        >
+          Submit
+        </button>
+        {error !== null && <p className='Error'>{error}</p>}
+        <p>{status}</p>
+      </form>
     </>
   );
 };

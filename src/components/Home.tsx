@@ -40,7 +40,10 @@ const Home = () => (
 
     <h3 className='text-semibold mt-4'>3. stateの管理</h3>
     <Link to='/section3_1' className='text-blue-700 underline ml-4 block'>
-      1. stateの管理
+      1. stateを使って入力に反応する
+    </Link>
+    <Link to='/section3_2' className='text-blue-700 underline ml-4 block'>
+      2. state構造の選択
     </Link>
   </>
 );
