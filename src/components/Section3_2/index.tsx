@@ -1,4 +1,5 @@
 import Form from './Form';
+import Menu from './Menu';
 
 const Section3_2 = () => {
   return (
@@ -11,6 +12,9 @@ const Section3_2 = () => {
       </div>
 
       <h3>state内の重複を避ける</h3>
+      <div className='inline-block m-2'>
+        <Menu />
+      </div>
     </>
   );
 };

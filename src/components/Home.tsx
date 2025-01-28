@@ -45,6 +45,9 @@ const Home = () => (
     <Link to='/section3_2' className='text-blue-700 underline ml-4 block'>
       2. state構造の選択
     </Link>
+    <Link to='/section3_3' className='text-blue-700 underline ml-4 block'>
+      3. コンポーネント間でstateを共有する
+    </Link>
   </>
 );
 

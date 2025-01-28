@@ -14,6 +14,7 @@ import Section2_3 from './components/Section2_3';
 import Section2_4 from './components/Section2_4';
 import Section3_1 from './components/Section3_1';
 import Section3_2 from './components/Section3_2';
+import Section3_3 from './components/Section3_3';
 
 const App = () => (
   <>
@@ -33,6 +34,7 @@ const App = () => (
           <Route path='section2_4' element={<Section2_4 />} />
           <Route path='section3_1' element={<Section3_1 />} />
           <Route path='section3_2' element={<Section3_2 />} />
+          <Route path='section3_3' element={<Section3_3 />} />
         </Route>
       </Routes>
     </BrowserRouter>
